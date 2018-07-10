@@ -10,14 +10,14 @@ const c = -35;
 // Fill in the code below based on the quadratic formula
 // Hint: for this next line, you will need to use a math concept that we haven't talked about.
 // Luckily, the operation you need is one google search away!
-const discriminant = ;
+const discriminant = b ** 2 - (4 * a * c);
 
 // There are two numerators and two answers because of the plus-minus
-const numerator1 = ;
-const numerator2 = ;
-const denominator = ;
-const answer1 = ;
-const answer2 = ;
+const numerator1 = b + Math.sqrt(discriminant);
+const numerator2 = b - Math.sqrt(discriminant);
+const denominator = 2 * a;
+const answer1 = numerator1 / denominator;
+const answer2 = numerator2 / denominator;
 
 // You should see 5 and -7
 console.log(answer1);
