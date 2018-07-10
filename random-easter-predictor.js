@@ -1,4 +1,5 @@
 // Author: Mahim Arib
+
 const random = require('random-int');
 
 let y = random(1583, 2003);
