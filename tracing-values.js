@@ -1,4 +1,5 @@
-// Author: FirstName LastName
+
+// Author: Mahim Arib
 var x, y, z;
 x = 10;
 y = x - 4;
