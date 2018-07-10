@@ -7,13 +7,13 @@ let change = parseInt(readline.question("Please enter cents as a positive intege
 
 console.log(change + " cents makes:");
 
-let quarters = Math.floor(change / 25);
+const quarters = Math.floor(change / 25);
 change %= 25;
-let dimes = Math.floor(change / 10);
+const dimes = Math.floor(change / 10);
 change %= 10;
-let nickels = Math.floor(change / 5);
+const nickels = Math.floor(change / 5);
 change %= 5;
-let pennies = Math.floor(change / 1);
+const pennies = Math.floor(change / 1);
 
 console.log(quarters + " quarters");
 console.log(dimes + " dimes");

@@ -1,6 +1,6 @@
 // Remember that you can comment parts of your code in and out!
 // Try this as you move from question to question below.
-let readline = require("readline-sync");
+const readline = require("readline-sync");
 // 1. Ask the user to enter a number, and print out "The square root of ___ is ___ ", but with the blanks filled in correctly. (Not sure how to get the square root of a number in JavaScript? Google it!)
 
 let num = readline.question("Give me a number: ");

@@ -1,5 +1,5 @@
 // Author: Mahim Arib
-let readline = require("readline-sync");
+const readline = require("readline-sync");
 
 console.log(" ******************************************************************", "\n", "Welcome to Super Easter Predictor!");
 
