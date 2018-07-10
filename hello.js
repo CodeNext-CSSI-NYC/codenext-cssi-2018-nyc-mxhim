@@ -1,6 +1,8 @@
 // Author: Mahim Arib
 
-console.log("Hello World!");
+let readline = require("readline-sync");
+let name = readline.question("Hello what is your name? ");
+console.log("Hello,", name);
 console.log("Hello World!");
 console.log("It's a beautiful day for programming, isn't it?");
 console.log("Hey! What's 1 + 1?");
