@@ -2,6 +2,8 @@ const readline = require('readline-sync');
 
 let userMove;
 let computerMove;
+let userScore = 0;
+let compScore = 0;
 
 function isIncorrect() {
   return !(userMove == 'rock' || userMove == 'paper' || userMove == 'scissor');
@@ -35,14 +37,20 @@ function declareWinner() {
              (userMove == 'paper' && computerMove == 'rock') ||
              (userMove == 'scissor' && computerMove == 'paper')) {
     console.log('you win!!!');
+    userScore++;
   } else {
     console.log('you lose!');
+    compScore++;
   }
 }
 
 function printBothMoves() {
   console.log('user:', userMove);
   console.log('computer:', computerMove);
+}
+
+function printScore() {
+  console.log('user: ' + userScore, 'computer: ' + compScore);
 }
 
 console.log('can you beat a computer in rock, paper, scissor say shoot?');
@@ -54,12 +62,13 @@ while (keepPlaying) {
   getComputerMove();
   printBothMoves();
   declareWinner();
+  printScore();
 
   let userResponse = readline.question('do you want to keep playing? (yes / no) ');
 
   if (userResponse == 'no') {
       keepPlaying = false;
   }
-  
+
   userMove = null;
 }
