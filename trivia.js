@@ -12,9 +12,10 @@ function Question(question, answer) {
 	this.answer = answer;
 }
 
-let stateNamesAndCapitals = ["Montgomery, Alabama", "Juneau, Alaska", "Phoenix, Arizona", "Little Rock, Arkansas", "Sacramento, California", "Denver", "Hartford, Connecticut", "Dover, Delaware", "Tallahassee, Florida", "Atlanta", "Honolulu", "Boise, Idaho", "Springfield, Illinois", "Indianapolis", "Des Moines, Iowa", "Topeka, Kansas", "Frankfort, Kentucky", "Baton Rouge, Louisiana", "Augusta, Maine", "Annapolis, Maryland", "Boston", "Lansing, Michigan", "Saint Paul, Minnesota", "Jackson, Mississippi", "Jefferson City, Missouri", "Helena, Montana", "Lincoln, Nebraska", "Carson City, Nevada", "Concord, New Hampshire", "Trenton, New Jersey", "Santa Fe, New Mexico", "Albany, New York", "Raleigh, North Carolina", "Bismarck, North Dakota", "Columbus, Ohio", "Oklahoma City", "Salem, Oregon", "Harrisburg, Pennsylvania", "Providence, Rhode Island", "Columbia, South Carolina", "Pierre, South Dakota", "Nashville, Tennessee", "Austin, Texas", "Salt Lake City", "Montpelier, Vermont", "Richmond, Virginia", "Olympia, Washington", "Charleston, West Virginia", "Madison, Wisconsin", "Cheyenne, Wyoming"];
+let stateNamesAndCapitals = ["Montgomery, Alabama", "Juneau, Alaska", "Phoenix, Arizona", "Little Rock, Arkansas", "Sacramento, California", "Denver, Colorado", "Hartford, Connecticut", "Dover, Delaware", "Tallahassee, Florida", "Atlanta, Georgia", "Honolulu, Hawaii", "Boise, Idaho", "Springfield, Illinois", "Indianapolis, Indiana", "Des Moines, Iowa", "Topeka, Kansas", "Frankfort, Kentucky", "Baton Rouge, Louisiana", "Augusta, Maine", "Annapolis, Maryland", "Boston, Massachusetts", "Lansing, Michigan", "Saint Paul, Minnesota", "Jackson, Mississippi", "Jefferson City, Missouri", "Helena, Montana", "Lincoln, Nebraska", "Carson City, Nevada", "Concord, New Hampshire", "Trenton, New Jersey", "Santa Fe, New Mexico", "Albany, New York", "Raleigh, North Carolina", "Bismarck, North Dakota", "Columbus, Ohio", "Oklahoma City, Oklahama", "Salem, Oregon", "Harrisburg, Pennsylvania", "Providence, Rhode Island", "Columbia, South Carolina", "Pierre, South Dakota", "Nashville, Tennessee", "Austin, Texas", "Salt Lake City, Utah", "Montpelier, Vermont", "Richmond, Virginia", "Olympia, Washington", "Charleston, West Virginia", "Madison, Wisconsin", "Cheyenne, Wyoming"];
 
 /**
+ * randomizes an array
  * @param  {array} array - Array that you want to randomize the index
  * @return {array} array - Randomized array
  */
@@ -37,7 +38,7 @@ function setQuestions(numberOfQuestions) {
 		const capital = randomizedStates[i].split(', ')[0];
 		const state = randomizedStates[i].split(', ')[1];
 
-		questions.push(new Question((i + 1) + '. What is the capital of ' + state + '?', capital));
+		questions.push(new Question((i + 1) + '. What is the capital of ' + state + '? ', capital));
 	}
 }
 
@@ -65,11 +66,12 @@ function askQuestions() {
 
 		if (questions[i].answer.toLowerCase() == answer.toLowerCase()) {
 			console.log('you got it correct!');
+			score++
 		} else {
 			console.log('sorry, thats wrong it\'s actually ' + questions[i].answer);
 		}
 
-		console.log('score:', ++score, '/', numberOfQuestions);
+		console.log('score:', score, '/', numberOfQuestions);
 	}
 }
 
