@@ -34,7 +34,7 @@ function randomize(array) {
 function setQuestions(numberOfQuestions) {
 	let randomizedStates = randomize(stateNamesAndCapitals);
 
-	for (var i = 0; i < numberOfQuestions; i++) {
+	for (let i = 0; i < numberOfQuestions; i++) {
 		const capital = randomizedStates[i].split(', ')[0];
 		const state = randomizedStates[i].split(', ')[1];
 
@@ -61,12 +61,12 @@ function askQuestions() {
 
 	setQuestions(numberOfQuestions);
 
-	for (var i = 0; i < questions.length; i++) {
+	for (let i = 0; i < questions.length; i++) {
 		let answer = readline.question(questions[i].question);
 
 		if (questions[i].answer.toLowerCase() == answer.toLowerCase()) {
 			console.log('you got it correct!');
-			score++
+			score++;
 		} else {
 			console.log('sorry, thats wrong it\'s actually ' + questions[i].answer);
 		}
