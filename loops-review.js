@@ -43,8 +43,8 @@ for(let i = 0; i <= 100; i++) {
 // But it might take many more attempts if I type 1, 1, 1, 1, 1 ....
 
 let sum = 0;
-while(sum >! 100) {
-    sum += parseInt(readline.question('enter a number: '))
+while(sum < 100) {
+    sum += parseInt(readline.question('enter a number: '));
 }
 
 // 5a. Use a loop to make this pattern:
@@ -55,6 +55,12 @@ while(sum >! 100) {
 // *****
 // ******
 
+let str = '';
+
+for (let i = 0; i < 6; i++) {
+    str += '*';
+    console.log(str);
+}
 
 // 5b. Use a loop to make this pattern:
 // ***********
@@ -72,16 +78,23 @@ while(sum >! 100) {
 // ***********
 //
 
+for (let i = 0; i < 7; i++) {
+    console.log('***********')
+    console.log('\n');
+}
 
 // 6. Use this line:
-// let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 // Set up a for loop that goes through this string.
 // Do not use 26 or 25 in your for loop. Instead use the .length property of strings.
 // Inside the for loop, store the corresponding letter for each index in a variable called letter.
 // Then, print out the toLowerCase() version of each letter.
 // You should see the alphabet, in lower case, with a new letter on each line.
 
-
+for (let i = 0; i < alphabet.length; i++) {
+    let letter = alphabet[i].toLowerCase();
+    console.log(letter);
+}
 
 // 7. Last time we listed out all of the factors of a number.
 // This time we will do something similar: we will check if a number is a perfect number.
@@ -96,3 +109,17 @@ while(sum >! 100) {
 // values from 1 to number - 1 and add together all the ones that are factors of
 // number. Return true if this sum is equal to number, false otherwise.
 // Make sure it returns true for 6 and 28 and false for pretty much anything else.
+
+function isPerfectNumber(num) {
+    let factorSum = 0;
+    for (let i = 1; i < num; i++) {
+        if (num % i == 0) {
+            factorSum += i;
+        }
+    }
+    return factorSum == num;
+}
+
+console.log(isPerfectNumber(6));
+console.log(isPerfectNumber(28));
+console.log(isPerfectNumber(8128));
