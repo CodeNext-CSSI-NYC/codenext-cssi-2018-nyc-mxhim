@@ -83,6 +83,10 @@ function shuffleCards(numMatches) {
 // Return this array.
 function createTracker(numMatches) {
   // Your code here
+  let arr = [];
+  for (let i = 0; i < numMatches * 2; i++) {
+    arr.push('X');
+  }
 }
 
 // This function controls the whole game.
