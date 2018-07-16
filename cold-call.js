@@ -1,7 +1,7 @@
 const random = require('random-int');
 const readline = require('readline-sync');
 
-const names = ['MA', 'JB', 'AM'];
+const names = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 let namesAlreadyCalled = [];
 
 while (namesAlreadyCalled.length != names.length) {
