@@ -35,7 +35,11 @@ testEqual(smallestLargest([3, 7, 2, 5]), [2, 7]);
 // 4. Write a function that takes an array and returns a similar array,
 // but with the last item moved up to the beginning.
 function moveLast(arr) {
-  let lastItem =
+  let newArr = [];
+  let lastItem = arr.pop();
+  for (let i; i < arr.length; i++) {
+
+  }
 }
 // Here is one test. Uncomment it when ready and try adding more.
 // testEqual(double([3, 2, 5, 7]), [7, 3, 2, 5]);
