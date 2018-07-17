@@ -21,6 +21,7 @@ for (let word of words) {
     }
 }
 
+
 // console.log(twelveLetters);
 
 // 2. Find all words that contain both x and z (or whatever fun combos you like).
