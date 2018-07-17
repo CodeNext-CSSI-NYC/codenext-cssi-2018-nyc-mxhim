@@ -39,8 +39,8 @@ function isGameOver(tracker) {
 function render(tracker) {
   // Your code here
   let str = '';
-  for (let i = 0; i < tracker.length; i++) {
-      str += (tracker[i] + ' ');
+  for (let item of tracker) {
+      str += (item + ' ');
   }
   console.log(str);
 }
@@ -53,23 +53,11 @@ function render(tracker) {
 // The last line should be: return shuffle(arr)
 // This will shuffle and return the array.
 function shuffleCards(numMatches) {
-  // Your code here
-  let currentIndex = numMatches.length, temporaryValue, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = numMatches[currentIndex];
-    numMatches[currentIndex] = numMatches[randomIndex];
-    numMatches[randomIndex] = temporaryValue;
-  }
-
-  return array;
+    let arr = [];
+    for(let i = 0; i < numMatches; i++) {
+        arr.push(i, i);
+    }
+    return shuffle(arr);
 }
 
 // This function returns an array like ["X", "X", "X", "X", "X", "X", "X", "X"]
@@ -87,6 +75,7 @@ function createTracker(numMatches) {
   for (let i = 0; i < numMatches * 2; i++) {
     arr.push('X');
   }
+  return arr;
 }
 
 // This function controls the whole game.
@@ -120,6 +109,27 @@ function play() {
   let numGuesses = 0;
   console.clear();
   // Your code here
+  while (isGameOver(tracker)) {
+    render(tracker);
+    console.log('Guess the matching cards');
+    let indexOfCard1 = readline.question('card 1: ');
+    let indexOfCard2 = readline.question('card 2: ');
+    let previousTracker = [];
+    for (let item of tracker) {
+      previousTracker.push(item);
+    }
+    tracker[indexOfCard1] = answer[indexOfCard1];
+    tracker[indexOfCard2] = answer[indexOfCard2];
+    console.clear();
+    numGuesses++;
+    render(tracker);
+    if (answer[indexOfCard1] == answer[indexOfCard2]) {
+      console.log('you guessed correctly!');
+    } else {
+      console.log('sorry! guess again...');
+      tracker = previousTracker;
+    }
+  }
 }
 
 function run() {
