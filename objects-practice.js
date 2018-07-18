@@ -97,7 +97,7 @@ console.log(eachLetterOnce('mississippi'));
 // "The key ___ has a value of ___"
 function printKeysAndValues(obj) {
     let objKeys = Object.keys(obj);
-    for(let key of objKeys) {
+    for (let key of objKeys) {
         console.log('The key ' + key + ' has a value of ' + obj[key]);
     }
 }
