@@ -159,7 +159,7 @@ for (let row = 0; row < 9; row++) {
             str += '-';
         }
     }
-    console.log(str);
+    // console.log(str);
 }
 
 // 7. A pyramid!
@@ -182,9 +182,16 @@ function makePyramidWithBaseOf(oddNum) {
     }
     for (let row = 0; row < numOfRows; row++) {
         let str = '';
+        let middle = Math.floor(numOfCols / 2);
         for (let col = 0; col < numOfCols; col++) {
-            let numOfWhitespace = numOfCols - numOfRows - row;
-
+            if (col < middle - row || col > middle + row) {
+                str += ' ';
+            } else {
+                str += '*';
+            }
         }
+        console.log(str);
     }
 }
+
+makePyramidWithBaseOf(51);
