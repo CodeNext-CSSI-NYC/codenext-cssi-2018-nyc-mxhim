@@ -28,7 +28,7 @@ function rollFiveDice() {
 // {2: 2, 3: 1, 5: 1, 1: 1} because two appears twice and 1/3/5 appear once.
 function createCounts(arr) {
     let rollCount = {};
-    for(let item of arr) {
+    for (let item of arr) {
         if (!rollCount.hasOwnProperty(item)) {
             rollCount[item] = 1;
         } else {
@@ -59,7 +59,7 @@ function createCounts(arr) {
 function isValid(counterObj) {
     let counterKeys = Object.keys(counterKeys);
     let sum = 0;
-    for(let key of counterKeys) {
+    for (let key of counterKeys) {
         sum += counterObj[key];
     }
     return sum == 5;
