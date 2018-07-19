@@ -194,4 +194,4 @@ function makePyramidWithBaseOf(oddNum) {
     }
 }
 
-makePyramidWithBaseOf(51);
+makePyramidWithBaseOf(159);
