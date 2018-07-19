@@ -53,7 +53,7 @@ function listDuplicates(arr) {
     return duplicates;
 }
 
-console.log(listDuplicates(arr1));
+// console.log(listDuplicates(arr1));
 
 
 // Bonus:
@@ -71,13 +71,18 @@ function findMode(arr) {
     }
     let keys = Object.keys(itemCounter);
     let mode = keys[0];
+    let frequents = [];
     for (let key of keys) {
         if (itemCounter[key] > itemCounter[mode]) {
+            frequents = [];
+            frequents.push(key);
             mode = key;
+        } else if (itemCounter[key] == itemCounter[mode]) {
+            frequents.push(key);
         }
     }
     console.log(itemCounter);
-    return mode;
+    return frequents;
 }
 
 console.log(findMode(arr1));
