@@ -84,6 +84,7 @@ function play() {
         render(tracker);
         console.log('\n');
         displayWrongLetters(wrongLetters);
+        console.log('\n');
         console.log('You got it! ' + randomWord);
     }
 }
