@@ -48,12 +48,13 @@ function play() {
     }
     let numGuessWrong = 0;
     let wrongLetters = [];
-    while (isGameOver(tracker) && numGuessWrong <= 6) {
+    while (isGameOver(tracker) && numGuessWrong < 6) {
+        console.clear();
         draw(numGuessWrong);
         render(tracker);
         console.log('\n');
         displayWrongLetters(wrongLetters);
-        let userInput = readline.question('Guess letter or the whole entire word: ');
+        let userInput = readline.question('Guess a letter: ');
         if (randomWord.includes(userInput)) {
             let indexes = [];
             for (let i = 0; i < randomWord.length; i++) {
@@ -71,11 +72,18 @@ function play() {
             numGuessWrong++;
             wrongLetters.push(userInput);
         }
-        console.clear();
     }
-    if (numGuessWrong > 6) {
-        console.log('sorry it\'s ' + randomWord);
-    } else if (isGameOver(tracker)) {
+    if (numGuessWrong == 6) {
+        console.clear();
+        draw(numGuessWrong);
+        render(randomWord.split(''));
+        console.log('YOU LOSE');
+    } else if (tracker.join('') == randomWord) {
+        console.clear();
+        draw(numGuessWrong);
+        render(tracker);
+        console.log('\n');
+        displayWrongLetters(wrongLetters);
         console.log('You got it! ' + randomWord);
     }
 }
